@@ -19,6 +19,8 @@ Une fois le projet cloner, lancer docker puis la commande dans ce dossier:
 
 *Attendre le chargement complet des images docker.*
 
+(En cas de problème, essayer les commandes suivantes: ```docker-compose down -v```, ```docker-compose build --no-cache```, ```docker-compose up```. Si le problème persiste, me contacter)
+
 Le projet est alors accessible par l'url ```http://localhost:3000/```
 ___
 
