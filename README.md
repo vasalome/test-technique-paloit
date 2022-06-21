@@ -62,4 +62,6 @@ Le travail est accessible dans le dossier ```/serveur``` et les CRUD ont été r
 > - Function() : ne pas prends en compte les "( " & " ) "
 
 
+## Conclusion
 
+En attente de votre réponse, je serais ravi de discuter avec vous, de mon code et de mes choix.
