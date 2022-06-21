@@ -61,6 +61,24 @@ Le travail est accessible dans le dossier ```/serveur``` et les CRUD ont été r
 > - eval() -> moins recommandé
 > - Function()
 
+Exemple d'une solution maison possible:
+> calc = 3+(2+2)*4
+
+Etape 1
+> calc[0] = 3
+> calc[1] = +
+> calc[1] = 2+2
+> calc[2] = *4
+
+Etape 2
+> calc[0] = 3+
+> calc[1] = 4 (on)
+> calc[2] = *4
+
+Etape 3
+> calc = 
+
+
 ## Conclusion
 
 En attente de votre réponse, je serais ravi de discuter avec vous, de mon code et de mes choix.

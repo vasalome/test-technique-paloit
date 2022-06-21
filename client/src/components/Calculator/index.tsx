@@ -54,9 +54,16 @@ export const calculate = (str: string) => {
   str = str.replace(',', '.')
   let tmp: string = '';
   let i: number = 0;
+  if (operators.includes(str[str.length - 1])) {
+    alert("Action impossible: Le dernier caractère ne peux pas être un opérateur");
+    throw new Error("Action impossible: Le dernier caractère ne peux pas être un opérateur (Valentin)");
+  }
   while (i < str.length) {
     if (accepted.includes(str[i]) || operators.includes(str[i]) || separators.includes(str[i])) {
-      if (operators.includes(str[i]) && i > 0 && operators.includes(str[i-1])) throw new Error("Action impossible: 2 opérateurs se suivent (Valentin)");
+      if (operators.includes(str[i]) && i > 0 && operators.includes(str[i-1])) {
+        alert("Action impossible: 2 opérateurs se suivent")
+        throw new Error("Action impossible: 2 opérateurs se suivent (Valentin)");
+      }
       else tmp += str[i]
     }
     i++;

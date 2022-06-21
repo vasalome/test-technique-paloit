@@ -2,6 +2,7 @@ import React, { FunctionComponent, useState, useEffect } from 'react';
 import { DataTableItem } from '../../styles';
 
 import { cities, ProductModel } from '../../App';
+import { calculate } from '../Calculator';
 
 interface Props {
   product: ProductModel,
@@ -17,9 +18,11 @@ const DataTableLine: FunctionComponent<Props> = ({product, onChange, findId, act
     prodPrice: ''
   })
   const [edit, setEdit] = useState<boolean>(false)
+  const [price, setPrice] = useState<string>('')
 
   useEffect(() => {
     setTable(product)
+    setPrice(product?.prodPrice ?? '')
   }, [product])
 
   const fetchPostProducts = (prod: ProductModel) => {
@@ -115,14 +118,17 @@ const DataTableLine: FunctionComponent<Props> = ({product, onChange, findId, act
         </select>
       </DataTableItem>
       <DataTableItem size={2}>
-        <input type="text" value={table?.prodPrice}
+        <input type="text" value={price}
           placeholder="Insert a price"
           onChange={(e: React.FormEvent<HTMLInputElement>): void => {
-            // let tmp: number = calculate(e.currentTarget.value)
-            // setTable({ ...table, prodPrice: tmp.toString() })
-            setTable({ ...table, prodPrice: e.currentTarget.value })
-            setEdit(true)
-          }}/>
+            setPrice(e.currentTarget.value)
+          }}
+          onBlur={(e: React.FormEvent<HTMLInputElement>): void => {
+            let tmp = calculate(e.currentTarget.value);
+            setPrice(tmp)
+            setTable({ ...table, prodPrice: tmp })
+          }}
+          />
       </DataTableItem>
       <DataTableItem size={3}>
         <button onClick={() => { patchProduct(table?._id) }}>

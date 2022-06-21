@@ -12,7 +12,7 @@ import {
 } from './styles';
 
 import DataTableLine from './components/DataTableLine';
-import Calculator, { calculate } from './components/Calculator';
+import Calculator from './components/Calculator';
 
 export const cities: string[] = ['lyon', 'paris', 'marseille', 'toulouse', 'lille', 'bordeau']
 
