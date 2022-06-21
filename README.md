@@ -58,9 +58,8 @@ Le travail est accessible dans le dossier ```/serveur``` et les CRUD ont été r
 ### Exercice 6: Oser l'interprétation
 
 > N'ayant pas le temps d'implémenter une solution maison, j'ai pris la décision de démontrer deux solutions existantes après avoir :
-> - eval()
-> - Function() : ne pas prends en compte les "( " & " ) "
-
+> - eval() -> moins recommandé
+> - Function()
 
 ## Conclusion
 

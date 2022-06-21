@@ -11,7 +11,7 @@ interface Properators {
 }
 
 const accepted = ['0','1','2','3','4','5','6','7','8','9'];
-const operators = ['+','-','*','/'];
+const operators = ['+','-','*','/', '%'];
 const separators = ['(', ')', ',', '.'];
 
 const Calculator: FunctionComponent<Properators> = ({activeLog}) => {
@@ -55,7 +55,7 @@ export const calculate = (str: string) => {
   let tmp: string = '';
   let i: number = 0;
   while (i < str.length) {
-    if (accepted.includes(str[i]) || operators.includes(str[i])) {
+    if (accepted.includes(str[i]) || operators.includes(str[i]) || separators.includes(str[i])) {
       if (operators.includes(str[i]) && i > 0 && operators.includes(str[i-1])) throw new Error("Action impossible: 2 opérateurs se suivent (Valentin)");
       else tmp += str[i]
     }
