@@ -10,6 +10,10 @@ interface Properators {
   activeLog?: boolean
 }
 
+const accepted = ['0','1','2','3','4','5','6','7','8','9'];
+const operators = ['+','-','*','/'];
+const separators = ['(', ')', ',', '.'];
+
 const Calculator: FunctionComponent<Properators> = ({activeLog}) => {
   const [input, setInput] = useState<string>('')
   const [result, setResult] = useState<number>()
@@ -25,20 +29,22 @@ const Calculator: FunctionComponent<Properators> = ({activeLog}) => {
         onChange={(e: React.FormEvent<HTMLInputElement>) => setInput(e.currentTarget.value)}
       />
       <Button
-        // onClick={() => calculate(input)}
         onClick={() => {
           setByEval(eval(input))
-          console.log(calculate(input))
-          setResult(calculate(input))
+          const result = calculate(input);
+          setResult(result)
         }}
       >Calc.</Button>
     </InputContainer>
+    <div>accept only caracters: ["{accepted.join('", "')},{operators.join('", "')},{separators.join('", "')}"]</div>
+    <div>will sanitize the others</div>
+    <div>will sanitize the others</div>
     <OptionsContainer style={{flexDirection: 'column'}}>
       <span style={{width: '100%', display: 'flex', justifyContent: 'space-between'}}>
-        <b>Result =</b>{result}
+        <b>Result with Function =</b>{result}
       </span>
       <span style={{width: '100%', display: 'flex', justifyContent: 'space-between'}}>
-        <b>Compare with eval() =</b>{byEval}
+        <b>Result with eval() =</b>{byEval}
       </span>
     </OptionsContainer>
     </>
@@ -46,8 +52,23 @@ const Calculator: FunctionComponent<Properators> = ({activeLog}) => {
 }
 
 export const calculate = (str: string) => {
+  str = str.replace(',', '.')
+  let tmp: string = '';
+  let i: number = 0;
+  while (i < str.length) {
+    if (accepted.includes(str[i]) || operators.includes(str[i])) {
+      if (operators.includes(str[i]) && i > 0 && operators.includes(str[i-1])) throw new Error("Action impossible: 2 opérateurs se suivent (Valentin)");
+      else tmp += str[i]
+    }
+    i++;
+  }
+  console.log("sanitize: |"+tmp+"|")
+  let result = Function("return "+tmp)();
+  return (result);
+}
 
-  return 0;
+const parser = (str: string) => {
+  // str
 }
 
 export default Calculator

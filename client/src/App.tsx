@@ -177,7 +177,7 @@ function App() {
           </OptionsContainer>
           : <OptionsContainer>Test: Get product by id<br/>(click the search icon in the list)</OptionsContainer>
         }
-        {/* <Calculator activeLog={activeLog} /> */}
+        <Calculator activeLog={activeLog} />
       </Layout>
         <Button log active={activeLog}
           onClick={() => setLog((prevState) => { return (!prevState) })}>

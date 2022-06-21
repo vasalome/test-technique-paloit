@@ -11,7 +11,11 @@ interface Props {
 }
 
 const DataTableLine: FunctionComponent<Props> = ({product, onChange, findId, activeLog}) => {
-  const [table, setTable] = useState<ProductModel>()
+  const [table, setTable] = useState<ProductModel>({
+    prodName: '',
+    prodCity: '',
+    prodPrice: ''
+  })
   const [edit, setEdit] = useState<boolean>(false)
 
   useEffect(() => {
@@ -95,7 +99,6 @@ const DataTableLine: FunctionComponent<Props> = ({product, onChange, findId, act
         <input type="text" value={table?.prodName}
           placeholder="Insert a name"
           onChange={(e: React.FormEvent<HTMLInputElement>): void => {
-            console.log(e.currentTarget.value)
             setTable({ ...table, prodName: e.currentTarget.value })
             setEdit(true)
           }}/>
@@ -112,7 +115,7 @@ const DataTableLine: FunctionComponent<Props> = ({product, onChange, findId, act
         </select>
       </DataTableItem>
       <DataTableItem size={2}>
-        <input type="number" value={table?.prodPrice}
+        <input type="text" value={table?.prodPrice}
           placeholder="Insert a price"
           onChange={(e: React.FormEvent<HTMLInputElement>): void => {
             // let tmp: number = calculate(e.currentTarget.value)
