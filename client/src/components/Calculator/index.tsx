@@ -38,7 +38,6 @@ const Calculator: FunctionComponent<Properators> = ({activeLog}) => {
     </InputContainer>
     <div>accept only caracters: ["{accepted.join('", "')},{operators.join('", "')},{separators.join('", "')}"]</div>
     <div>will sanitize the others</div>
-    <div>will sanitize the others</div>
     <OptionsContainer style={{flexDirection: 'column'}}>
       <span style={{width: '100%', display: 'flex', justifyContent: 'space-between'}}>
         <b>Result with Function =</b>{result}
