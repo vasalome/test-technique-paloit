@@ -59,24 +59,9 @@ Le travail est accessible dans le dossier ```/serveur``` et les CRUD ont été r
 
 > N'ayant pas le temps d'implémenter une solution maison, j'ai pris la décision de démontrer deux solutions existantes après avoir :
 > - eval() -> moins recommandé
-> - Function()
+> - new Function() avec un sanitize des caratères pour n'accepter que les caractères choisi et une base de gestion d'erreur
 
-Exemple d'une solution maison possible:
-> calc = 3+(2+2)*4
-
-Etape 1
-> calc[0] = 3
-> calc[1] = +
-> calc[1] = 2+2
-> calc[2] = *4
-
-Etape 2
-> calc[0] = 3+
-> calc[1] = 4 (on)
-> calc[2] = *4
-
-Etape 3
-> calc = 
+La solution new Function() a pu ensuite être déployé dans ma tableau, colonne Prix.
 
 
 ## Conclusion

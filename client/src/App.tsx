@@ -145,7 +145,7 @@ function App() {
             <DataTableItem size={3}>Ref (id)</DataTableItem>
             <DataTableItem style={{padding: '5px'}} size={3}>Nom Produit</DataTableItem>
             <DataTableItem style={{padding: '5px'}} size={3}>Ville</DataTableItem>
-            <DataTableItem style={{padding: '5px'}} size={2}>Price</DataTableItem>
+            <DataTableItem style={{padding: '5px'}} size={2}>Prix</DataTableItem>
             <DataTableItem size={3}>Actions</DataTableItem>
           </div>
           { table
