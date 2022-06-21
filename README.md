@@ -61,7 +61,7 @@ Le travail est accessible dans le dossier ```/serveur``` et les CRUD ont été r
 > - eval() -> moins recommandé
 > - new Function() avec un sanitize des caratères pour n'accepter que les caractères choisi et une base de gestion d'erreur
 
-La solution new Function() a pu ensuite être déployé dans ma tableau, colonne Prix.
+La solution new Function() a pu ensuite être déployé dans mon tableau, colonne Prix.
 
 
 ## Conclusion
