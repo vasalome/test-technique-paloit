@@ -57,7 +57,7 @@ Le travail est accessible dans le dossier ```/serveur``` et les CRUD ont été r
 
 ### Exercice 6: Oser l'interprétation
 
-> N'ayant pas le temps d'implémenter une solution maison, j'ai pris la décision de démontrer deux solutions existantes après avoir :
+> N'ayant pas le temps d'implémenter une solution maison, j'ai pris la décision de démontrer deux solutions existantes :
 > - eval() -> moins recommandé
 > - new Function() avec un sanitize des caratères pour n'accepter que les caractères choisi et une base de gestion d'erreur
 
